@@ -1,49 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/13 10:48:27 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/13 19:31:38 by nbourhis         ###   ########.fr       */
+/*   Created: 2017/03/13 16:04:49 by nbourhis          #+#    #+#             */
+/*   Updated: 2017/03/13 18:42:27 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-#include <stdio.h>
-
-int		ft_is_prime(int nb)
+void	ft_putchar(char c)
 {
-	int i;
-	int mod;
+	write(1, &c, 1);
+}
 
-	i = 3;
-	if (nb == 1 || nb == 2)
+
+
+void	ft_putnbr(int nb)
+{
+
+	if (nb == -2147483648)
 	{
-		return (0);
+		ft_putchar('-');
+		ft_putchar('2');
+		ft_putnbr(147483648);
 	}
-	if ( nb % 2 == 0)
+	else if (nb < 0)
 	{
-		return (0);
+		nb = -nb;
+		ft_putchar('-');
+		ft_putnbr(nb);
 	}
-	while(i < 46341)
+
+	else if (nb > 9)
 	{
-		mod = nb % i;
-		if( mod == 0)
-		{
-			return (0);
-		}
-		i = i + 2;
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
 	}
-	return (1);
+	else if (nb < 9)
+	{
+		ft_putchar(nb + '0');
+	}
+
 }
 
 int		main()
 {
-	int prim;
-
-	prim = ft_is_prime(7);
-	printf("%d\n", prim);
+	ft_putnbr(-2147483648);
 	return (0);
 }
-

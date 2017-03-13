@@ -6,7 +6,7 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/12 20:17:04 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/12 20:44:27 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/13 19:27:12 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int  main ()
    	int a;
 	int b;
 
-	a = 5;
+	a = 10;
 	b = ft_iterative_factorial(a);
 	printf("%d\n", b);
 	return (0);

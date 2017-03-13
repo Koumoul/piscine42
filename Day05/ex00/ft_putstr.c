@@ -1,49 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/13 10:48:27 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/13 19:31:38 by nbourhis         ###   ########.fr       */
+/*   Created: 2017/03/11 15:52:17 by nbourhis          #+#    #+#             */
+/*   Updated: 2017/03/13 16:04:03 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int		ft_is_prime(int nb)
+int		ft_putchar(char c)
 {
-	int i;
-	int mod;
-
-	i = 3;
-	if (nb == 1 || nb == 2)
-	{
-		return (0);
-	}
-	if ( nb % 2 == 0)
-	{
-		return (0);
-	}
-	while(i < 46341)
-	{
-		mod = nb % i;
-		if( mod == 0)
-		{
-			return (0);
-		}
-		i = i + 2;
-	}
-	return (1);
-}
-
-int		main()
-{
-	int prim;
-
-	prim = ft_is_prime(7);
-	printf("%d\n", prim);
+	write(1, &c, 1);
 	return (0);
 }
 
+void	ft_putstr(char *str)
+{
+	while (*str != '\0')
+	{
+		ft_putchar(*str);
+		str++;
+	}
+}
