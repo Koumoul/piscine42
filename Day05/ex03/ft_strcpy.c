@@ -6,7 +6,7 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 22:12:24 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/13 23:04:06 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/14 19:34:54 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@ char	*ft_strcpy(char *dest, char *src)
 	int i;
 
 	i = 0;
-	while (*src != 1)
+	while(src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }
 
 int		main()
 {
-	char src[] = "hello";
-	char dest[5];
+	char src[] = "hello world";
+	char *dest;
 	char *ret;
 
-	ret = ft_strcpy(dest, src);
-	printf("%s", ret);
+	printf("%s", ft_strcpy(dest, src));
 	return (0);
 }
