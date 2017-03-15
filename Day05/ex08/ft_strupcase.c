@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/13 22:12:24 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/13 22:54:35 by nbourhis         ###   ########.fr       */
+/*   Created: 2017/03/15 10:52:41 by nbourhis          #+#    #+#             */
+/*   Updated: 2017/03/15 15:26:26 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strupcase(char *str)
 {
 	int i;
+	char c;
 
 	i = 0;
-	while (*src != '\0')
+	c = 'x';
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		if (str[i] > 96  && str[i] < 123)
+		{
+			c = str[i];
+			str[i] = c - 32;
+		}
 		i++;
 	}
-	return (dest);
+	return (str);
 }
 
 int		main()
 {
-	char src[] = "hello";
-	char dest[5];
-	char *ret;
-
-	ret = ft_strcpy(dest, src);
-	printf("%s", ret);
-	return (0);
+	char tab[] = "Hello";
+	printf("%s", ft_strupcase(tab));
 }

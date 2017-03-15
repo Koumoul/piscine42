@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/15 14:52:49 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/15 15:52:59 by nbourhis         ###   ########.fr       */
+/*   Created: 2017/03/13 22:12:24 by nbourhis          #+#    #+#             */
+/*   Updated: 2017/03/14 23:13:56 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char	*ft_strlowercase(char *str)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	int i;
-	char c;
 
 	i = 0;
-	c = 'x';
-	while (str[i] != '\0')
+	while (i < n)
 	{
-		if (str[i] > 64 && str[i] < 91 )
-		{
-			c = str[i];
-			str[i] = c + 32;
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	return (str);
+	dest[i] = '\0';
+	return (dest);
 }
 
 int		main()
 {
-	char tab[] = "ABCDEFGTHGYJJUGZ";
-	printf("%s", ft_strlowercase(tab));
-	return (0);
+	char src[] = "hello world";
+	char dest[300];
+
+	printf("%s", ft_strncpy(dest, src, 4));
 }
-
-

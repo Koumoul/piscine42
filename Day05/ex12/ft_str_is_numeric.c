@@ -6,7 +6,7 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/15 16:05:39 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/15 16:42:22 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/15 16:57:33 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ int ft_strlen(char *str)
 
 
 
-int		ft_str_is_alpha(char *str)
+int		ft_str_is_numeric(char *str)
 {
 	int count;
 	int len_str;
 
 	count = 0;
 	len_str = ft_strlen(str);
-	while ((str[count] > 96 && str[count] < 123) || (str[count] > 64 && str[count] < 91))
+	while (str[count] > 47  && str[count] < 58)
 	{
 		count++;
 	}
@@ -50,8 +50,8 @@ int		ft_str_is_alpha(char *str)
 
 int		main()
 {
-	char str[] = "abGc&dF";
+	char str[] = "32143543543510000031321e";
 
-	printf("%d", ft_str_is_alpha(str));
+	printf("%d", ft_str_is_numeric(str));
 	return (0);
 }

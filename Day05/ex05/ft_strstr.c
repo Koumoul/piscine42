@@ -6,7 +6,7 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 17:47:28 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/14 22:46:24 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/15 16:47:33 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*ft_strstr(char *str, char *to_find)
 		i++;
 	}
 
-	return NULL;
+	return (NULL);
 }
 
 int		main()
