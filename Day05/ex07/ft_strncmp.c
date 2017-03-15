@@ -6,9 +6,12 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 23:15:24 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/15 09:02:36 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/15 20:50:47 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
+#include <string.h>
 
 int		ft_strlen(char *str)
 {
@@ -17,33 +20,40 @@ int		ft_strlen(char *str)
 	i = 0;
 	while (*str != '\0')
 	{
-		str++;
 		i++;
+		str++;
 	}
 	return (i);
 }
 
-
-int		ft_strcmp(char *s1, char *s2)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int len_s1;
-	int len_s2;
-	int diff;
+	unsigned int i;
+
+	i = 0;
+	if (ft_strlen(s1) != ft_strlen(s2))
+	{
+		return (0);
+	}
+	while (s2[i] == s1[i] && s2[i] != '\0' && i < n -1)
+	{
+		i++;
+	}
+	return (s1[i] - s2[i]);
 	
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
-	if ( len_s1 > len_s2)
-	{
-		return (1);
-	}
-    else if (len_s1 < len_s2)
-	{
-		return (-1);
-	}
-	else if (len_s1 == len_s2)
-	{
-		return (0)
-	}
 }
+
+int		main()
+{
+	char *s1 = "aaa";
+	char *s2 = "Baa";
+	unsigned int n;
+
+	n = 2;
+	printf("ft_str = %d\n", ft_strncmp(s1, s2, n));
+	printf("strncmp = %d\n",	strncmp(s1, s2, n));
+	return (0);
+}
+
 
 

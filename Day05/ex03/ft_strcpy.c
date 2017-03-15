@@ -6,7 +6,7 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 22:12:24 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/14 19:34:54 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/15 20:57:20 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@ char	*ft_strcpy(char *dest, char *src)
 
 int		main()
 {
-	char src[] = "hello world";
-	char *dest;
-	char *ret;
+	char src[] = "hello world aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+	char dest[] = "";
 
 	printf("%s", ft_strcpy(dest, src));
 	return (0);

@@ -6,11 +6,12 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/15 17:24:20 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/15 21:03:00 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/15 22:58:38 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <strings.h>
 
 int		ft_strlen(char *str)
 {
@@ -24,26 +25,40 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strcat(char *dest, char *src)
+unsigned int	ft_strlcat(char *dest, char *src,unsigned int nb)
 {
-	int i;
-	int len_dest;
+	unsigned int i;
+	unsigned int len_dest;
+	unsigned int len_src;
 
 	len_dest = ft_strlen(dest);
+	len_src = ft_strlen(src);
 	i = 0;
-	while (src[i] != '\0')
+	if (len_dest + len_src < nb)
+	{
+		while ((src[i] != '\0'))
 		{
 			dest[len_dest +i] = src[i];
 			i++;
 		}
-	return (dest);
+	dest[len_dest + i] = '\0';
+
+	return (len_dest);
+	}
+	else
+	{
+		return (nb);
+	}
 }
 
 int		main()
 {
-	char dest[5000] = "hello";
-	char src[] = " world";
+	char dest[30] = "1234567891";
+	char src[] = "12345";
+	unsigned int nb;
 	
-	printf("%s", ft_strcat(dest, src));
+	nb = 14;
+	printf("ft =  %u\n", ft_strlcat(dest, src, nb));
+	printf("cat = %lu\n", strlcat(dest, src, nb));
 	return (0);
 }
