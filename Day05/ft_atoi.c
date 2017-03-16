@@ -6,85 +6,49 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 20:41:16 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/16 10:07:11 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/16 14:00:44 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
 
-int		ft_strlen(char *str)
+int		ft_put_char_in_nbr(char *str)
 {
 	int i;
+	int nbr;
 
 	i = 0;
-	while (*str != '\0')
+	nbr = 0;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		str++;
-		i++;
-	}
-	return (i);
-}
-
-int ft_recursive_power(int nb, int power)
-{
-	if (power < 0)
-	{
-		return (0);	
-	}
-	if (power > 0)
-	{
-		return ( ft_recursive_power(nb, power - 1) * nb);
-	}
-	else
-	{
-	return (1);
-	}
-}
-
-int		ft_while(char *chif_char)
-{
-	while (chif_char > 48 && chif_char < 58)
-	{
-		chif_char = str[i];
-		nbr = nbr + ft_recursive_power(10,(len - 1 - i)) * (chif_char - 48);
-		i++;
+			nbr = nbr * 10 + str[i] - 48;
+			str++;
 	}
 	return (nbr);
 }
-
-int 	ft_atoi(char *str)
+	
+int		ft_atoi(char *str)
 {
-	char chif_char;
-	int i;
-	int nbr;
-	int len;
-
-	len  = ft_strlen(str);
-	nbr = 0;
-	i = 1;
-	chif_char = *str;
-	if (chif_char > 48 && chif_char < 58)
+	while ( str[0] == ' ' || str[0] == '\n' || str[0] == '\t' ||
+		 str[0] == '\v' || str[0] == '\f')
 	{
-		ft_while(chif_char);
+		str++;
 	}
-	else if (chif_char == '-' && ((*str + 1) < 58 && (*str + 1) > 48));
+	if (str[0] == '+')
 	{
-		chif_char = *str + 1;
-		ft_while(chif_char);
+		str++;
 	}
-	else if (chif_char == '0')
+	else if (str[0] == '-' &&  str[1] >= '0' && str[1] <= '9' )
 	{
-
+		str++;
+		return (-ft_put_char_in_nbr(str));
 	}
-	else if
-	{
-		return(0);
-	}
-
+	return(ft_put_char_in_nbr(str));
 }
 
 int		main()
 {
-	char *str = "123456789";
+	char *str = "12356789";
 	int a;
 
 	a = ft_atoi(str);

@@ -6,7 +6,7 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/15 17:24:20 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/15 22:58:38 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/15 23:06:08 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ unsigned int	ft_strlcat(char *dest, char *src,unsigned int nb)
 		}
 	dest[len_dest + i] = '\0';
 
-	return (len_dest);
+	return (len_dest + len_src);
 	}
 	else
 	{
