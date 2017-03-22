@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   testvif.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/16 21:29:57 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/21 11:21:51 by nbourhis         ###   ########.fr       */
+/*   Created: 2017/03/17 09:43:58 by nbourhis          #+#    #+#             */
+/*   Updated: 2017/03/17 11:25:25 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <stdlib.h>
 #include <unistd.h>
-
+#define LEN		42000000
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
@@ -26,28 +26,23 @@ void	ft_putstr(char *str)
 	}
 }
 
-int		ft_strlen(char *str)
+int		main()
 {
 	int i;
+	char *str;
 
+	str = (char*)malloc(sizeof(char) * (LEN + 1));
 	i = 0;
-	while (str[i] != '\0')
+	while (i < LEN)
 	{
+		str[i] = '0' + (i % 10);
 		i++;
 	}
-	return (i);
-}
-
-int		main(int argc, char **argv)
-{
-	int i;
-	char *str_rev;
-
-	i = argc - 1;
-	while (i != 0)
+	str[i] = '\0';
+	free(str);
+	while (1)
 	{
-		 ft_putstr(argv[i]);
-		 ft_putchar('\n');
-		 i--;
+		;
 	}
+	return (0);
 }

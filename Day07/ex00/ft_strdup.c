@@ -1,17 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/16 21:12:50 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/21 11:17:45 by nbourhis         ###   ########.fr       */
+/*   Created: 2017/03/17 10:26:23 by nbourhis          #+#    #+#             */
+/*   Updated: 2017/03/21 17:42:58 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
+int		ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
+char *ft_strdup(char *src)
+{
+	char *str;
+	char len_src;
+	int i;
+
+	i = 0;
+	len_src = ft_strlen(src);
+	str = (char*)malloc(sizeof(char) * (len_src + 1));
+	while (i < len_src)
+	{
+		str[i] = src[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
+//-------------------------------------------
+#include <unistd.h>
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
@@ -26,15 +58,16 @@ void	ft_putstr(char *str)
 	}
 }
 
-int main(int argc, char **argv)
+#include <stdio.h>
+int		main()
 {
-	int i;
+	char src[] = "hello";
+	char *str;
 
-	i = 1;
-	while (i < argc)
-	{
-		ft_putstr(argv[i]);
-		ft_putchar('\n');
-		i++;
-	}
+	str = ft_strdup(src);
+	ft_putstr(str);
+	return (0);
 }
+
+
+

@@ -1,53 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/16 21:29:57 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/21 11:21:51 by nbourhis         ###   ########.fr       */
+/*   Created: 2017/03/22 21:20:01 by nbourhis          #+#    #+#             */
+/*   Updated: 2017/03/22 21:20:27 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_point.h"
 
-void	ft_putchar(char c)
+void set_point(t_point *point)
 {
-	write(1, &c, 1);
+	point->x = 42;
+	point->y = 21;
 }
-
-void	ft_putstr(char *str)
+int main(void)
 {
-	while (*str != '\0')
-	{
-		ft_putchar(*str);
-		str++;
-	}
-}
-
-int		ft_strlen(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-int		main(int argc, char **argv)
-{
-	int i;
-	char *str_rev;
-
-	i = argc - 1;
-	while (i != 0)
-	{
-		 ft_putstr(argv[i]);
-		 ft_putchar('\n');
-		 i--;
-	}
+	t_point point;
+	set_point(&point);
+	return (0);
 }

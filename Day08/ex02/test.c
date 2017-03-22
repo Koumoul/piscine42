@@ -1,53 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/16 21:29:57 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/21 11:21:51 by nbourhis         ###   ########.fr       */
+/*   Created: 2017/03/22 18:18:54 by nbourhis          #+#    #+#             */
+/*   Updated: 2017/03/22 20:24:13 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_boolean.h"
 
-void	ft_putchar(char c)
+void ft_putstr(char *str)
 {
-	write(1, &c, 1);
+	while (*str)
+		write(1, str++, 1);
 }
-
-void	ft_putstr(char *str)
+t_bool ft_is_even(int nbr)
 {
-	while (*str != '\0')
-	{
-		ft_putchar(*str);
-		str++;
-	}
+	return ((EVEN(nbr)) ? TRUE : FALSE);
 }
-
-int		ft_strlen(char *str)
+int main(int argc, char **argv)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-int		main(int argc, char **argv)
-{
-	int i;
-	char *str_rev;
-
-	i = argc - 1;
-	while (i != 0)
-	{
-		 ft_putstr(argv[i]);
-		 ft_putchar('\n');
-		 i--;
-	}
+	(void)argv;
+	if (ft_is_even(argc - 1) == TRUE)
+		ft_putstr(EVEN_MSG);
+	else
+		ft_putstr(ODD_MSG);
+	return (SUCCESS);
 }
