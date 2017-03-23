@@ -6,9 +6,14 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 21:25:09 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/23 09:51:45 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/23 12:54:09 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
+#include "ft_stock_par.h"
+char	**ft_split_whitespaces(char *str);
+void	ft_show_tab(struct s_stock_par *par);
 
 
 int ft_size(char *str)
@@ -23,7 +28,7 @@ int ft_size(char *str)
 	return (i);
 }
 
-char	*ft_strcopy(char *dest, char src)
+char	*ft_strcopy(char *dest, char *src)
 {
 	int i;
 
@@ -39,19 +44,25 @@ char	*ft_strcopy(char *dest, char src)
 
 struct s_stock_par *ft_param_to_tab(int ac, char **av)
 {
-	t_stock_par **tab_struct;
+ 	t_stock_par *tab_struct;
 	char *dest;
 	int i;
 	t_stock_par param;
 
 	i = 0;
-	tab_struct = (char*)malloc(sizeof(t_stock_par) * ac);
+	tab_struct = (t_stock_par*)malloc(sizeof(t_stock_par) * (ac + 1));
 	while (i < ac)
 	{
 		param.size_param = ft_size(av[i]);
-		param.str = af[i];
-		dest = (char*)malloc(sizeof(char) * (paran.size_param + 1));
+		param.str = av[i];
+		dest = (char*)malloc(sizeof(char) * (param.size_param + 1));
 		param.copy = ft_strcopy(dest, av[i]);
-		param.tab = ft_split_whitspaces(av[i]);
-		tab_struct[i] = &param
+		param.tab = ft_split_whitespaces(av[i]);
+		tab_struct[i] = param;
+		i++;
 	}
+	tab_struct[i].str = (char*)malloc(sizeof(char));
+	tab_struct[i].str[0] = '\0';
+
+	return (tab_struct);
+}
