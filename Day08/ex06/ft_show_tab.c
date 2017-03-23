@@ -6,20 +6,21 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 09:43:48 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/23 13:31:25 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/23 13:51:28 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "ft_stock_par.h"
-struct s_stock_par *ft_param_to_tab(int ac, char **av);
 
-void	ft_putchar(char c)
+struct s_stock_par	*ft_param_to_tab(int ac, char **av);
+
+void				ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putstr(char *str)
+void		ft_putstr(char *str)
 {
 	while (*str != '\0')
 	{
@@ -28,7 +29,7 @@ void	ft_putstr(char *str)
 	}
 }
 
-void	ft_putnbr(int nbr)
+void		ft_putnbr(int nbr)
 {
 	if (nbr == -2147483648)
 	{
@@ -53,7 +54,7 @@ void	ft_putnbr(int nbr)
 	}
 }
 
-int		ft_len(char **tab)
+int			ft_len(char **tab)
 {
 	int i;
 
@@ -65,11 +66,11 @@ int		ft_len(char **tab)
 	return (i);
 }
 
-void	ft_print_words_tables(char **tab)
+void		ft_print_words_tables(char **tab)
 {
-	int		i;
-	int		nb;
-				
+	int	i;
+	int	nb;
+
 	i = 0;
 	nb = ft_len(tab);
 	while (i < nb)
@@ -80,7 +81,7 @@ void	ft_print_words_tables(char **tab)
 	}
 }
 
-void	ft_show_tab(struct s_stock_par *par)
+void		ft_show_tab(struct s_stock_par *par)
 {
 	int i;
 
@@ -96,7 +97,7 @@ void	ft_show_tab(struct s_stock_par *par)
 	}
 }
 
-int main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	t_stock_par *test;
 
@@ -104,5 +105,3 @@ int main(int argc, char **argv)
 	ft_show_tab(test);
 	return (0);
 }
-
-

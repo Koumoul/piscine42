@@ -6,17 +6,17 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 21:25:09 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/23 13:19:43 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/23 13:49:04 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_stock_par.h"
-char	**ft_split_whitespaces(char *str);
-void	ft_show_tab(struct s_stock_par *par);
 
+char				**ft_split_whitespaces(char *str);
+void				ft_show_tab(struct s_stock_par *par);
 
-int ft_size(char *str)
+int					ft_size(char *str)
 {
 	int i;
 
@@ -28,7 +28,7 @@ int ft_size(char *str)
 	return (i);
 }
 
-char	*ft_strcopy(char *dest, char *src)
+char				*ft_strcopy(char *dest, char *src)
 {
 	int i;
 
@@ -42,12 +42,12 @@ char	*ft_strcopy(char *dest, char *src)
 	return (dest);
 }
 
-struct s_stock_par *ft_param_to_tab(int ac, char **av)
+struct s_stock_par	*ft_param_to_tab(int ac, char **av)
 {
- 	t_stock_par *tab_struct;
-	char *dest;
-	int i;
-	t_stock_par param;
+	t_stock_par	*tab_struct;
+	t_stock_par	param;
+	char		*dest;
+	int			i;
 
 	i = 0;
 	tab_struct = (t_stock_par*)malloc(sizeof(t_stock_par) * (ac + 1));
@@ -63,6 +63,5 @@ struct s_stock_par *ft_param_to_tab(int ac, char **av)
 	}
 	tab_struct[i].str = (char*)malloc(sizeof(char));
 	tab_struct[i].str[0] = '\0';
-
 	return (tab_struct);
 }
