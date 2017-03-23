@@ -6,7 +6,7 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 09:43:48 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/23 13:51:28 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/23 14:06:23 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,37 +54,12 @@ void		ft_putnbr(int nbr)
 	}
 }
 
-int			ft_len(char **tab)
-{
-	int i;
-
-	i = 0;
-	while (tab[i][0] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-void		ft_print_words_tables(char **tab)
-{
-	int	i;
-	int	nb;
-
-	i = 0;
-	nb = ft_len(tab);
-	while (i < nb)
-	{
-		ft_putstr(tab[i]);
-		ft_putchar('\n');
-		i++;
-	}
-}
-
 void		ft_show_tab(struct s_stock_par *par)
 {
 	int i;
+	int j;
 
+	j = 0;
 	i = 0;
 	while (par[i].str[0] != '\0')
 	{
@@ -92,7 +67,12 @@ void		ft_show_tab(struct s_stock_par *par)
 		ft_putchar('\n');
 		ft_putnbr(par[i].size_param);
 		ft_putchar('\n');
-		ft_print_words_tables(par[i].tab);
+		while (par[i].tab[j][0] != '\0')
+		{
+			ft_putstr(par[i].tab[j]);
+			ft_putchar('\n');
+			j++;
+		}
 		i++;
 	}
 }
