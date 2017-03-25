@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.h                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mrigal- <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/22 22:11:07 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/23 22:56:06 by nbourhis         ###   ########.fr       */
+/*   Created: 2017/03/12 11:06:37 by mrigal-           #+#    #+#             */
+/*   Updated: 2017/03/12 23:13:20 by mrigal-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
+int		ft_putchar(char c);
+void	rush(int x, int y);
 
-typedef	struct	s_stock_par
+int		main(void)
 {
-	int		size_param;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}				t_stock_par;
-
-#endif
+	rush(123, 42);
+	return (0);
+}

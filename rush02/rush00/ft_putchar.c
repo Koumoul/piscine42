@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.h                                     :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mrigal- <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/22 22:11:07 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/23 22:56:06 by nbourhis         ###   ########.fr       */
+/*   Created: 2017/03/12 11:04:04 by mrigal-           #+#    #+#             */
+/*   Updated: 2017/03/12 19:17:40 by mrigal-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
+#include <unistd.h>
 
-typedef	struct	s_stock_par
+int	ft_putchar(char c)
 {
-	int		size_param;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}				t_stock_par;
-
-#endif
+	write(1, &c, 1);
+	return (0);
+}

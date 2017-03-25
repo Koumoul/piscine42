@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 22:06:33 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/23 23:07:34 by nbourhis         ###   ########.fr       */
+/*   Created: 2017/03/24 12:57:57 by nbourhis          #+#    #+#             */
+/*   Updated: 2017/03/24 13:01:11 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
-typedef _Bool t_bool;
-# include <unistd.h>
-# define EVEN_MSG "I have an even number of arguments.\n"
-# define ODD_MSG "I have an odd number of arguments.\n"
-# define EVEN(nbr) (nbr % 2 == 0)
-# define TRUE 1
-# define FALSE 0
-# define SUCCESS 0
+#include <unistd.h>
 
-#endif
+void	ft_foreach(int *tab, int lenght, void (*f)(int));
+void	ft_putnbr(int nbr);
+int		ft_ultimate_range(int **range, int min, int max);
+void	ft_putchar(char c)
+{
+		write(1, &c, 1);
+}
 
+int		main()
+{
+	int *ptr[1];
+	int i;
+	int a;
+
+	a = 3;
+	i = 0;
+	ft_ultimate_range(ptr, 2, 6);
+	ft_foreach(*ptr,6-2,&ft_putnbr);
+}

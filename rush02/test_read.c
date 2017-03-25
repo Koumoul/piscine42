@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   test_read.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 22:06:33 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/23 23:07:34 by nbourhis         ###   ########.fr       */
+/*   Created: 2017/03/25 19:32:56 by nbourhis          #+#    #+#             */
+/*   Updated: 2017/03/25 20:50:42 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
-typedef _Bool t_bool;
-# include <unistd.h>
-# define EVEN_MSG "I have an even number of arguments.\n"
-# define ODD_MSG "I have an odd number of arguments.\n"
-# define EVEN(nbr) (nbr % 2 == 0)
-# define TRUE 1
-# define FALSE 0
-# define SUCCESS 0
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-#endif
+int	main()
+{
+	char *buf;
+	int len;
+	int temp;
+
+	buf = 0;	
+	len = 0;
+	temp = 1;
+	temp = len;
+	len++;
+	while (len != temp)
+	{
+		temp = len;
+		len++;
+		buf = (char*)malloc(sizeof(char) * len);
+		len = read(0, buf - len, len);
+		printf("len = %d, temp = %d, in = %s\n", len, temp, buf - len);
+	}
+	return (0);
+}
 

@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   ft_wich_rush.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 22:06:33 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/23 23:07:34 by nbourhis         ###   ########.fr       */
+/*   Created: 2017/03/25 22:10:12 by nbourhis          #+#    #+#             */
+/*   Updated: 2017/03/25 22:50:25 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
-typedef _Bool t_bool;
-# include <unistd.h>
-# define EVEN_MSG "I have an even number of arguments.\n"
-# define ODD_MSG "I have an odd number of arguments.\n"
-# define EVEN(nbr) (nbr % 2 == 0)
-# define TRUE 1
-# define FALSE 0
-# define SUCCESS 0
+char	ft_wich_rush(in ) 
+{
+	while (i < 5)
+	{
+		if (!(ft_compare(in, rush[i])))
+		{
 
-#endif
+		}
+	}
+}
+
+void	ft_print_result(char num, int x, int y);
+{
+	ft_putstr("colle-");
+	ft_putstr(num);
+	ft_putchar(' ');
+	ft_putchar('[');
+	ft_putchar(x + 48);
+	ft_putchar(']');
+	ft_putchar(' ');
+	ft_putchar('[');
+	ft_putchar(y + 48);
+	ft_putchar(']');
+	ft_putchar('\n');
+}
+
 

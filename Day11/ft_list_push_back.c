@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   ft_list_push_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 22:06:33 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/23 23:07:34 by nbourhis         ###   ########.fr       */
+/*   Created: 2017/03/24 15:28:43 by nbourhis          #+#    #+#             */
+/*   Updated: 2017/03/25 17:52:09 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ft_list.h"
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
-typedef _Bool t_bool;
-# include <unistd.h>
-# define EVEN_MSG "I have an even number of arguments.\n"
-# define ODD_MSG "I have an odd number of arguments.\n"
-# define EVEN(nbr) (nbr % 2 == 0)
-# define TRUE 1
-# define FALSE 0
-# define SUCCESS 0
+void	ft_list_pushback(t_list **begin_list, void *data)
+{
+	t_list	*new_elemnt;
 
-#endif
+	new_elemnt = ft_create_elem(data);
+	new_elemnt->data = data;
+	new_elemnt->next = *begin_list;
+}
+
+
+
+
 

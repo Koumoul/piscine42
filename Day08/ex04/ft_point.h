@@ -6,9 +6,12 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 21:02:40 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/22 21:22:38 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/23 22:34:30 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
 typedef	struct	s_point
 {
@@ -17,3 +20,4 @@ typedef	struct	s_point
 
 }				t_point;
 
+#endif
