@@ -6,15 +6,12 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 21:25:09 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/23 22:40:14 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/27 11:08:31 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_stock_par.h"
-
-char				**ft_split_whitespaces(char *str);
-void				ft_show_tab(struct s_stock_par *par);
 
 int					ft_size(char *str)
 {

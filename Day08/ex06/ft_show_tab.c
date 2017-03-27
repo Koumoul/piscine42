@@ -6,16 +6,14 @@
 /*   By: nbourhis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 09:43:48 by nbourhis          #+#    #+#             */
-/*   Updated: 2017/03/23 14:06:23 by nbourhis         ###   ########.fr       */
+/*   Updated: 2017/03/27 11:14:55 by nbourhis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "ft_stock_par.h"
 
-struct s_stock_par	*ft_param_to_tab(int ac, char **av);
-
-void				ft_putchar(char c)
+void		ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
